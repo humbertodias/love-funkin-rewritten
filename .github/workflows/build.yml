@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup love-11.3-win64
         run: |
@@ -27,7 +27,7 @@ jobs:
           make win64
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: funkin-rewritten-win64
           path: build/win64
@@ -37,13 +37,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Setup love-11.3-win32
+      - name: Setup love-11.5-win32
         run: |
-          curl -L --remote-name https://github.com/love2d/love/releases/download/11.3/love-11.3-win32.zip
-          unzip love-11.3-win32.zip -d resources/win32
-          mv resources/win32/love-11.3-win32 resources/win32/love
+          curl -L --remote-name https://github.com/love2d/love/releases/download/11.5/love-11.5-win32.zip
+          unzip love-11.5-win32.zip -d resources/win32
+          mv resources/win32/love-11.5-win32 resources/win32/love
 
       - name: Build
         run: |
@@ -71,7 +71,7 @@ jobs:
           make macos
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: funkin-rewritten-macos
           path: build/macos
@@ -81,14 +81,14 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Build
         run: |
           make lovefile
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: funkin-rewritten-lovefile
           path: build/lovefile
