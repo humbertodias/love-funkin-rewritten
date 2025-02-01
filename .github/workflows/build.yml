@@ -16,11 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup love-11.3-win64
+      - name: Setup love-11.5-win64
         run: |
-          curl -L --remote-name https://github.com/love2d/love/releases/download/11.3/love-11.3-win64.zip
-          unzip love-11.3-win64.zip -d resources/win64
-          mv resources/win64/love-11.3-win64 resources/win64/love
+          curl -L --remote-name https://github.com/love2d/love/releases/download/11.5/love-11.5-win64.zip
+          unzip love-11.5-win64.zip -d resources/win64
+          mv resources/win64/love-11.5-win64 resources/win64/love
 
       - name: Build
         run: |
